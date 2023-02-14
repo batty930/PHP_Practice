@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./4-1.css"
+    <link rel="stylesheet" href="./4-1.css">
     <title>Ex4</title>
 </head>
 <body>
@@ -60,11 +60,29 @@
     <p>
     起床時，第一件事情是什麼?
     <p>
-    <input type="radio" name="up1" value="up1">坐在床上，等待回神
-    <input type="radio" name="up2" value="up2">繼續賴床
+    <form method="post" action="Ex4-0.php">
+        <input type="radio" name="up" value="Ex4-1.php">坐在床上，等待回神
+        <br>
+        <input type="radio" name="up" value="Ex4-2.php">繼續賴床
+        </p>
+        <p>
+        <input type="submit" name="send" value="確定">
+    </form>
     </p>
+    <br>
+    5.
     <p>
-    <input type="submit" name="send" value="確定">
+    <?php
+    $X=array(array("50","51","52"),
+             array("60","61","62"),
+             array("70","71","72"),
+             array("80","81","82"));
+    $s=0;
+    for($i=0;$i<=3;$i++){
+         $s+=array_sum($X[$i]);
+    }
+    echo "$s"; 
+    ?>
     </p>
 </body>
 </html>
