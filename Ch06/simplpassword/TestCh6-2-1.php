@@ -1,5 +1,5 @@
 <?php
-$name=$_POST["name"];
+$name=$_POST["id"];
 $password=$_POST["password"];
 if($name !="test" || $password !="12356")
 {
