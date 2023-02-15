@@ -1,4 +1,5 @@
 <?php
+include("CalculateAreaClass.php");
 $length=$_POST["length"];
 $width=$_POST["width"];
 $show=new area;

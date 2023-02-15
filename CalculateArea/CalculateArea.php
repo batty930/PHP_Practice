@@ -9,8 +9,8 @@
 <body>
     計算面積<p>
     <form name="form1" method="post" action="CalculateArea-1.php">
-        長度:<input type="number" name="length" size=5>
-        寬度:<input type="number" name="width" size=5>
+        長度:<input type="number" name="length" size=3>
+        寬度:<input type="number" name="width" size=3>
         <input type="submit" name="Submit" value="計算">
     </form>
 </body>
