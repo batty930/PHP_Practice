@@ -11,8 +11,7 @@
     <?php
     //計算資料筆數
     include("DB.php");
-    $rows=$pdo->prepare("select * from guestbook");
-    $rows->execute();
+    $rows=$con->query("select * from guestbook");
     $total=mysqli_num_rows($rows);
     $show=ceil($total/5);   //每頁顯示5筆
     echo "共".$total."筆留言<p>";
@@ -42,9 +41,10 @@
     $page=$_GET["page"];       //$_GET取得頁數
     if(empty($page)) $page=1;  //如果$page為空則設定為1
     $start=5*($page-1);        //讀取起點=讀取筆數*(頁數-1)
-    $sql="SELECT * FORM guestbook ORDER BY no DESC LIMIT $start,5"; //依no做遞減排序
-    $result=$pdo->prepare($con,$sql);
-    $result->execute();
+    $sql=$con->prepare("SELECT * FORM guestbook ORDER BY no DESC LIMIT $start,5"); //依no做遞減排序
+    $sql->execute();
+    $result=$con->query($sql);
+
     //顯示資料庫資料
     
     while (list($no,$name,$mail,$subject,$content,$putdate)=mysqli_fetch_row($result))
