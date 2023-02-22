@@ -1,0 +1,63 @@
+html,
+body 
+{
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+}
+
+p{
+    color: rgb(202, 95, 76);
+}
+
+a{
+  color: rgb(148, 192, 230);
+}
+
+.form_ {
+    width: 100%;
+    max-width: 567px;
+    padding: 15px;
+    margin: auto;
+    top: 50%;  
+    left: 50%;
+  }
+
+.form_ .form-add:focus-within {
+    z-index: 2;
+  }
+
+.form_add {
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    border: 1px solid;
+    color: gray;
+    padding: 30px; 
+    text-align: center; 
+  }
+
+.form_add :focus-within {
+    color: rgb(56, 33, 14);
+  }
+
+.form_ input {
+  margin-bottom: 15px;
+}
+
+.form_ input[name="password"] {
+  transform: translate(10px, 0);
+}
+
+
+
+/*眼睛*/
+#checkEye {
+  transform: translate(10px, 0);
+}
