@@ -8,6 +8,7 @@ $address=$_POST["address"];
 $tel=$_POST["tel"];
 $id=$_SESSION["user"];
 
-$sql="UPDATE user SET email='$email',address='$address',tel='$tel'where id='$id'";
-$conn->query($sql);
+$sql="UPDATE user SET email='$email',address='$address',tel='$tel' WHERE id='$id'";
+$update = $conn->prepare($sql);
+$update->execute();
 ?>
