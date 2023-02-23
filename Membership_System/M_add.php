@@ -20,7 +20,7 @@
         <label>*帳號</label><br>
         <input type="text" name="id" placeholder="請輸入英文或數字"><br>
         <label>*密碼</label><br>
-        <input type="password" name="password" id="floatingPassword" placeholder="請輸入英文或數字">
+        <input type="password" name="password" placeholder="請輸入英文或數字">
         <i id="checkEye" class="fas fa-eye"></i>
         <br>
         <label>*E-MAIL</label><br>

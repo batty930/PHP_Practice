@@ -14,8 +14,9 @@ $user='root';
 $pass='014966';
 $dsn="mysql:host=$host;dbname=$dbName";
 $conn = new PDO($dsn, $user, $pass); 
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-$link = mysqli_connect("localhost", "root", "014966","member");
-mysqli_set_charset($link, "utf8mb4");
+/*mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+$conn = new mysqli($host, $user, $pass, $dbName);
+mysqli_set_charset($conn, "utf8mb4");*/
 ?>
