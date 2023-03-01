@@ -1,10 +1,8 @@
 <?php
+include("M_db.php");
 session_start();
 $id = $_SESSION["user"];
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,21 +17,22 @@ $id = $_SESSION["user"];
     <main class="table">
         <table>
             <?php
-            include("M_db.php");
-            $result = $conn->prepare("SELECT * FROM user where id='$id'");
-            $result->execute();
-            list($id, $password, $email, $sex, $address, $tel) = $result->fetchAll(PDO::FETCH_ASSOC); ?>
+            $stmt = $conn->prepare("SELECT * FROM user WHERE id = ?");
+            $stmt->execute([$id]);
+            $rows = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            ?>
             <tr>
                 <th>Email</th>
-                <td><?php echo $email; ?></td>
+                <td><?php echo $rows['email']; ?></td>
             </tr>
             <tr>
                 <th>地址</th>
-                <td><?php echo $address; ?></td>
+                <td><?php echo $rows['address']; ?></td>
             </tr>
             <tr>
                 <th>電話</th>
-                <td><?php echo $tel; ?></td>
+                <td><?php echo $rows['tel']; ?></td>
             </tr>
 
 
