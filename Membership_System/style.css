@@ -13,6 +13,9 @@ body {
 
 p {
   color: rgb(202, 95, 76);
+  font-size: 16px;
+  font-weight: bold;
+  
 }
 
 a {
@@ -60,7 +63,7 @@ a {
   width: 80%;
 }
 
-.table table{
+.table table {
   width: 80%;
   border-collapse: collapse;
 }
@@ -80,7 +83,7 @@ a {
   color: white;
   text-align: center;
   padding: 10px 0;
-  border-radius:5px;
+  border-radius: 5px;
 }
 
 .table th:after {

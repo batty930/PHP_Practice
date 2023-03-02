@@ -8,7 +8,7 @@ $_SESSION["pw"];
 $user = $id;
 $pw = $password;
 
-include("M_db.php");
+require("M_db.php");
 
 $sql = "SELECT * FROM user WHERE id=:id";
 $stmt = $conn->prepare($sql);
@@ -17,11 +17,11 @@ $stmt->execute();
 $num = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (empty($num)) {
-    header("refresh:3;URL=M_login.php");
-    exit("還沒加入會員");
+    header("refresh:0.01;URL=M_login.php");
+    echo "<script>alert('還沒加入會員')</script>";
 } else if (password_verify($password, $num['password']) === false) {
-    header("refresh:3;URL=M_login.php");
-    exit("密碼錯誤");
+    header("refresh:0.01;URL=M_login.php");
+    echo "<script>alert('密碼錯誤')</script>";
 } else {
     $_SESSION['id'] = $num['id'];
     $_SESSION['password'] = $num['password'];

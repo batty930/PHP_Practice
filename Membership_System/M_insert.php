@@ -1,5 +1,5 @@
 <?php
-include("M_db.php");
+require("M_db.php");
 
 $id = $_POST["id"];
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -9,7 +9,8 @@ $address = isset($_POST["address"]) && !empty($_POST["address"]) ? $_POST["addre
 $tel = isset($_POST["tel"]) && !empty($_POST["tel"]) ? $_POST["tel"] : null;
 
 if (empty($id) || empty($password) || empty($email)) {
-    exit("*欄位未填!");
+    header("refresh:0.01;URL=M_add.php");
+    echo "<script>alert('*欄位未填!')</script>";
 }
 
 $sql = "SELECT * FROM user WHERE id=?";
@@ -17,10 +18,10 @@ $result = $conn->prepare($sql);
 $result->execute([$id]);
 $num = $result->rowCount();
 if ($num > 0) {
-    header("refresh:3;URL=M_add.php");
-    exit('帳號重複了，不能註冊');
+    header("refresh:0.01;URL=M_add.php");
+    echo "<script>alert('帳號重複了，不能註冊')</script>";
 }
-try {
+
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $data = array('id' => $id, 'password' => $password, 'email' => $email, 'sex' => $sex, 'address' => $address, 'tel' => $tel);
     $sql = "INSERT INTO user (id, password, email, sex, address, tel) VALUES (:id, :password, :email, :sex, :address, :tel)";
@@ -43,9 +44,7 @@ try {
         $_SESSION['sex'] = $user['sex'];
         $_SESSION['address'] = $user['address'];
         $_SESSION['tel'] = $user['tel'];
-        header("refresh:3;URL=M_index.php");
-        echo $_SESSION['id'] . $_SESSION['sex'] . "歡迎您的加入!3秒後為您跳轉至首頁...";
+        header("refresh:1;URL=M_index.php");
+        echo "<script>alert('".$_SESSION['id'] . $_SESSION['sex'] ."歡迎您的加入!')</script>";
     }
-} catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
-}
+?>

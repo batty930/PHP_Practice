@@ -34,8 +34,6 @@ $id = $_SESSION["user"];
                 <th>電話</th>
                 <td><?php echo $rows['tel']; ?></td>
             </tr>
-
-
         </table>
 </body>
 
