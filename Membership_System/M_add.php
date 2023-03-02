@@ -35,7 +35,7 @@
         <input type="submit" class="w-100 btn btn-lg btn-primary" name="Submit" value="加入會員">
     </form>
 </body>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="/sample/Membership_System/move.js"></script>
 
 </html>

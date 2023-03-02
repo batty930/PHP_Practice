@@ -2,12 +2,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" />
 <?php
 include("M_db.php");
-include("M_check.php");
-
 $stmt = $conn->prepare("SELECT * FROM user WHERE id = ?");
 $stmt->execute([$id]);
 $rows = $stmt->fetch(PDO::FETCH_ASSOC);
-
 ?>
 <main class="form_">
     <form name="form1" method="post" action="M_modify.php">
