@@ -1,4 +1,6 @@
 <?php
+function PDOconn()
+{
 // PDO 連線設定
 $options = [
     PDO::ATTR_PERSISTENT => false,
@@ -15,7 +17,8 @@ $pass='014966';
 $dsn="mysql:host=$host;dbname=$dbName";
 $conn = new PDO($dsn, $user, $pass); 
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+return $conn;
+}
 /*mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $conn = new mysqli($host, $user, $pass, $dbName);
 mysqli_set_charset($conn, "utf8mb4");*/

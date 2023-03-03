@@ -1,4 +1,7 @@
 <head>
+    <?php
+    session_start();
+    session_destroy(); ?>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" />
@@ -22,7 +25,7 @@
 
                 <input type="submit" class="w-100 btn btn-lg btn-primary" name="Submit" value="登入會員">
                 <p>
-                    <a href="M_add.php">加入會員</a>
+                    <a href="insert\M_add.php">加入會員</a>
         </div>
         </form>
 </body>

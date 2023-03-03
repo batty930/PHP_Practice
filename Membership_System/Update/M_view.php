@@ -1,7 +1,7 @@
 <?php
 include("M_db.php");
 session_start();
-$id = $_SESSION["user"];
+$id = $_SESSION["id"];
 ?>
 <head>
     <meta charset="UTF-8">
