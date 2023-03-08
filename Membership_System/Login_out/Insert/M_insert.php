@@ -37,7 +37,6 @@ if ($stmt->rowCount() > 0) {
 
     session_start();
     $_SESSION['id'] = $user['id'];
-    $_SESSION['password'] = $user['password'];
     $_SESSION['email'] = $user['email'];
     $_SESSION['sex'] = $user['sex'];
     $_SESSION['address'] = $user['address'];

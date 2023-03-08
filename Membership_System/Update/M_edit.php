@@ -1,5 +1,10 @@
-<link rel="stylesheet" href="./style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" />
+<?php 
+("..\Function\Echohtml.php");
+?>
+<link rel="stylesheet" href="../css/all.css" />
+<link rel="stylesheet" href="../css/bootstrap.min.css" />
+<link rel="stylesheet" href="../Login_out/style.css">
+</head>
 <?php
 include("M_db.php");
 $stmt = $conn->prepare("SELECT * FROM user WHERE id = ?");

@@ -1,14 +1,10 @@
-<head>
-    <?php
-    session_start();
-    session_destroy(); ?>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" />
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>登入</title>
+<?php
+("..\Function\Echohtml.php");
+?>
+<link rel="stylesheet" href="../css/all.css" />
+<link rel="stylesheet" href="../css/bootstrap.min.css" />
+<link rel="stylesheet" href="./style.css"/>
+<title>登入</title>
 </head>
 
 <body>
@@ -29,7 +25,7 @@
         </div>
         </form>
 </body>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="../js/jquery-3.6.3.min.js"></script>
 <script src="/sample/Membership_System/move.js"></script>
 
 </html>
