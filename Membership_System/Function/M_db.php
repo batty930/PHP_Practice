@@ -13,7 +13,7 @@ $options = [
 $host='localhost';
 $dbName='member';
 $user='root';
-$pass='014966';
+$pass='0123456';
 $dsn="mysql:host=$host;dbname=$dbName";
 $conn = new PDO($dsn, $user, $pass); 
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
